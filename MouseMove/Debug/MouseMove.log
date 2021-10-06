@@ -1,0 +1,6 @@
+﻿  MouseMove.cpp
+C:\Users\HorizonWHY\Desktop\Projects\MouseMove\MouseMove.cpp(20,76): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
+C:\Users\HorizonWHY\Desktop\Projects\MouseMove\MouseMove.cpp(20,63): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
+C:\Users\HorizonWHY\Desktop\Projects\MouseMove\MouseMove.cpp(24,61): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
+C:\Users\HorizonWHY\Desktop\Projects\MouseMove\MouseMove.cpp(24,46): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
+  MouseMove.vcxproj -> C:\Users\HorizonWHY\Desktop\Projects\MouseMove\Debug\MouseMove.exe
