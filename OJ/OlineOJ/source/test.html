@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charset="utf-8">
+        <title>TEST</title>
+    </head>
+    <body>
+        <p>Test</p>
+        <button onclick="myFunction()">test</button>
+        <script>
+            function myFunction(){
+            var x =document.createElement("textarea");
+            var t=document.createTextNode("nmsl");
+            x.appendChild(t);
+            document.body.appendChild(x);
+            }        
+        </script>
+
+    <p id="demo">
+        JavaScript 能改变 HTML 元素的内容。
+    </p>
+        <script>
+            function myFunction2()
+            {
+             x=document.getElementById("demo");  // 找到元素
+             x.innerHTML="Hello JavaScript!";    // 改变内容
+            }
+        </script>
+        <button type="button" onclick="myFunction2()">点击这里</button>
+        
+    </body>
+</html>

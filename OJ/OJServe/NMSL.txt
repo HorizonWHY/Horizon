@@ -1,0 +1,36 @@
+'use strict'
+
+var http = require('http');
+var url = require('url');
+var fs = require('fs');
+
+var server = http.createServer(function(request,response){
+    //console.log(request);
+    var args = url.parse(request.url,true);
+    var bug = args.query.bug;
+    response.setHeader('Content-Type','text/html;charset=utf-8');
+    console.log(request.url); //////
+    if(request.url!='/favicon.ico')
+    {
+        if(bug===undefined)
+        {
+            console.log('NMSL');
+            response.end('NMSL');
+        }
+        else
+        {
+            console.log(bug);
+            response.end(bug);
+            fs.writeFile('NMSL.txt',bug,function(err){
+                console.log(err);
+            });
+        }
+
+    }
+
+    
+});
+
+server.listen(8080);
+
+

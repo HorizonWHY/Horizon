@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src='jquery.min.js'></script>
+
+    </head>
+
+    <body>
+        <h1>Horizon OJ</h1>
+        <textarea id = 'Text' cols="120" rows="40"></textarea>
+        <textarea id = 'Text2'></textarea>
+        <br/>
+        <button onclick="Send()">send</button>
+        <h3 id = 'Show'></h3>
+        <pre id = 'result' style="font-family:'consolas';line-height: 15px;"></pre>
+        <br/>
+        <h3 id = 'testres'></h3>
+        <script>
+            function Send()
+            {
+                var Text = document.getElementById('Text');
+                //encode 安全化编码
+                $.get('http://localhost:8080?bug='+encodeURIComponent(Text.value),function(data,status){
+                //    alert('NMSL');
+                //    alert(data);
+                    var result = document.getElementById('result');
+                    var Show = document.getElementById('Show');
+                    var NewRes = data.replace(/\n/g,'<br>'); //全局替换
+                    result.innerHTML= NewRes;
+                    Show.innerHTML='运行结果：';
+                });
+                //alert(Text.value);
+
+                //测试多个 url 参数
+                $.get('http://localhost:8080?testarg='+encodeURIComponent(Text2.value),function(data2,status2){
+                    var testres = document.getElementById('testres');
+                    var Show2 = data2;
+                    testres.innerHTML = Show2;
+                })
+            }
+        </script>
+    </body>
+</html>
